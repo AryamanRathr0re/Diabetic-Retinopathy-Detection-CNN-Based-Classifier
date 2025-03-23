@@ -277,6 +277,76 @@
           margin: 1rem;
         }
       }
+
+      /* About Section Styles */
+      .about-section {
+        margin: 2rem 0;
+        padding: 2rem;
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 1rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .about-content h2 {
+        color: var(--accent-color);
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+      }
+
+      .about-card {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      .about-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent-color);
+      }
+
+      .about-card i {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+      }
+
+      .about-card h3 {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .about-card p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-section {
+          padding: 1rem;
+          margin: 1rem 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -284,10 +354,9 @@
       <div class="container">
         <div class="header">
           <h1>Diabetic Retinopathy Detection</h1>
-          <p>
-            Upload a retinal image to detect signs of diabetic retinopathy using
-            advanced AI analysis
-          </p>
+          <div class="logo">
+            <i class="fas fa-eye"></i>
+          </div>
         </div>
 
         <div class="main-card">
@@ -326,6 +395,47 @@
             </div>
             <div class="result-item">
               <p>Confidence: <span id="accuracy"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+          <div class="about-content">
+            <h2>About the Model</h2>
+            <div class="about-grid">
+              <div class="about-card">
+                <i class="fas fa-brain"></i>
+                <h3>Model Architecture</h3>
+                <p>
+                  Built with TensorFlow and Keras, using a pre-trained CNN to
+                  identify key retinal features and abnormalities.
+                </p>
+              </div>
+              <div class="about-card">
+                <i class="fas fa-layer-group"></i>
+                <h3>Classification Stages</h3>
+                <p>
+                  Detects 5 stages of diabetic retinopathy: No DR, Mild,
+                  Moderate, Severe, and Proliferative DR.
+                </p>
+              </div>
+              <div class="about-card">
+                <i class="fas fa-cogs"></i>
+                <h3>How It Works</h3>
+                <p>
+                  1. Preprocesses retinal images<br />2. Extracts key
+                  features<br />3. Classifies DR stage
+                </p>
+              </div>
+              <div class="about-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Performance</h3>
+                <p>
+                  Fast processing (2-3s per image) with high accuracy in DR
+                  stage classification.
+                </p>
+              </div>
             </div>
           </div>
         </div>
